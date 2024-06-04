@@ -16,6 +16,9 @@ public class ProductConfig : IEntityTypeConfiguration<Product>
 {
     public void Configure(EntityTypeBuilder<Product> builder)
     {
-
+        builder.HasKey(p => p.ID);
+        builder.Property(p => p.Name).IsRequired().HasMaxLength(200);
+        builder.Property(p => p.ManufacturePhone).IsRequired().HasMaxLength(10);
+        builder.Property(p => p.ManufactureEmail).IsRequired().HasMaxLength(200);
     }
 }
