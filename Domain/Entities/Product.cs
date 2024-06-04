@@ -10,6 +10,7 @@ public class Product
     public string ManufacturePhone { get; set; }
     public string ManufactureEmail { get; set; }
     public bool IsAvailable { get; set; }
+    public User User { get; set; }
 }
 
 public class ProductConfig : IEntityTypeConfiguration<Product>
