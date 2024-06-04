@@ -20,5 +20,8 @@ public class ProductConfig : IEntityTypeConfiguration<Product>
         builder.Property(p => p.Name).IsRequired().HasMaxLength(200);
         builder.Property(p => p.ManufacturePhone).IsRequired().HasMaxLength(10);
         builder.Property(p => p.ManufactureEmail).IsRequired().HasMaxLength(200);
+
+        builder.HasIndex(p => p.ProductDate).IsUnique();
+        builder.HasIndex(p => p.ManufactureEmail).IsUnique();
     }
 }
