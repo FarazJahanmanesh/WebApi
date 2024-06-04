@@ -1,4 +1,5 @@
 using Application.Api.Configuration;
+using Application.Api.Middleware;
 using Domain.Common;
 using Microsoft.Extensions.Configuration;
 
@@ -26,6 +27,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseExceptionMiddleware();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
